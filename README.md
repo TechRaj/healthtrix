@@ -4,7 +4,7 @@
 
 ## Introduction
 
-HealthTrix is an innovative solution designed to revolutionize the triage process in the Polyclinics and Hospitals. HealthTrix transcends healthcare visits by significantly reducing wait times for the General Vital Assessment process in Polyclinics and A&Es. HealthTrix also aims to enhance patient education on body vitals. By integrating a proprietary accessory with the AXTRO Fit 3 smartwatch,we allow the patients to autonomously collect vital body metrics, significantly reducing the workload on healthcare professionals and streamlining the General Vital Assessment process. HealthTrix is integrated with our proprietary VitaLearn (AI powered chatbot) which helps in educating and empowering individuals with medical knowledge about their body vitals and foster proactive health management.
+HealthTrix is an innovative solution designed to revolutionize the triage process in the Polyclinics and Hospitals. HealthTrix transcends healthcare visits by significantly reducing wait times for the General Vital Assessment process in Polyclinics and A&Es. HealthTrix also aims to enhance patient education on body vitals. By integrating a proprietary accessory with the AXTRO Fit 3 smartwatch, we allow the patients to autonomously collect vital body metrics, significantly reducing the workload on healthcare professionals and streamlining the General Vital Assessment process. HealthTrix is integrated with our proprietary VitaLearn (AI powered chatbot) which helps in educating and empowering individuals with medical knowledge about their body vitals and foster proactive health management.
 
 ## Features
 
