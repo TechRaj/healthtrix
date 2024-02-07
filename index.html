@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .page {
+        display: none;
+      }
+
+      .visible {
+        display: flex;
+      }
+      .sing-login {
+        background-image: url("log-in-with-singpass.png");
+        background-size: cover;
+        position: absolute;
+        width: 220px;
+        height: 45px;
+        margin-top: 150px;
+      }
+
+      .sing-login:focus {
+        transform: scale(0.9);
+      }
+      textarea {
+resize: none;
+}
+    </style>
+  </head>
+
+  <body>
+    <div class="container mx-auto">
+      <div class="flex justify-center items-center h-screen">
+        <div class="mockup-phone">
+          <div class="camera"></div>
+          <div class="display">
+            <div class="artboard artboard-demo phone-1">
+              <div id="page1" class="page visible justify-center items-center">
+                <img
+                  src="photo_6192539433295788330_y.png"
+                  class="w-full h-full object-cover"
+                  alt="logo"
+                />
+                <button class="sing-login"></button>
+              </div>
+
+              <div id="page2" class="page justify-center items-center flex-col">
+                <h1>Logging in with SingPass</h1>
+                <p id="timer1">Please wait 5 seconds...</p>
+
+                <div
+                  class="text-center loading loading-spinner loading-lg"
+                ></div>
+              </div>
+
+              <div id="page3" class="page justify-center items-center flex-col">
+                <img
+                  src="photo_6192539433295788330_y (1).png"
+                  class="w-full h-full object-cover mr-[10px]"
+                  alt="logo"
+
+                />
+                <div class="join join-vertical lg:join-horizontal">
+                  <button class="btn btn-primary join-item" onclick=" $('#page3').removeClass('visible'); $('#page4').addClass('visible');">Start Measurement</button>
+                  <button class="btn btn-secondary join-item" onclick="alert('No current vital history')">View Vital History</button>
+                </div>
+              </div>
+
+              <div id="page4" class="page justify-center items-center flex-col">
+                <!--qr code box-->
+                <div class="qrcode">
+                  <img
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BarrotaBoysForLife"
+                    alt=""
+                    class="mb-[40px] object-cover"
+                  />
+                </div>
+
+         
+           
+
+                <button class="btn btn-primary" onclick="mH()">I have scanned the QR code</button>
+
+                <p class="text-center text-xs mt-[20px]">Scan Hospital’s QR code to begin process</pc>
+
+              </div>
+
+              <div id="page5" class="page justify-center items-center flex-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16" style="margin-bottom: 60px;">
+                    <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                  </svg>
+
+                <h1 class="text-center text-[2.5em] ml-[25px]">Measuring...</h1>
+                <p class="text-center text-xs mt-[20px]">Please wait while we measure your heart rate</p>
+
+                <div
+                  class="text-center loading loading-spinner loading-lg mt-[20px]" id="page5-loading"
+                ></div>
+
+                <div class="hidden" id="page5-results">
+                    <h1 class="text-center text-[2.5em] ml-[25px]">80 bpm</h1>
+     
+                    <button class="btn btn-ghost" onclick="$('#page5').removeClass('visible'); $('#page6').addClass('visible');">Click here to find out more</button>
+                </div>
+
+
+              </div>
+
+              <div id="page6" class="page justify-center items-center flex-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16" style="margin-bottom: 30px;">
+                    <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+                </svg>
+
+                <p class="text-center text-xs mt-[20px] px-[5px] ">
+                    According to your data, you are a 21 year old Singaporean Male.
+
+                    A heart rate of 72 beats per minute (bpm) is generally considered to be within the normal range for adults. The typical resting heart rate for adults ranges from 60 to 100 bpm. Factors such as activity level, emotional state, medication use, and overall health can influence heart rate.
+                    
+                    Assuming you're in good health and not experiencing any troubling symptoms (like chest pain, shortness of breath, dizziness, or palpitations), a heart rate of 72 bpm is likely a sign of good cardiovascular health.
+                    </p>
+
+
+                <button class="btn btn-primary px-10 text-center mt-6 " onclick="mH2()">Next</button>
+
+              </div>
+
+              <div id="page7" class="page justify-center items-center flex-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16" style="margin-bottom: 60px;">
+                    <path fill-rule="evenodd" d="M7.21.8C7.69.295 8 0 8 0q.164.544.371 1.038c.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8m.413 1.021A31 31 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z"/>
+                    <path fill-rule="evenodd" d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87z"/>
+                  </svg>
+                <h1 class="text-center text-[2.5em] ml-[25px]">Measuring...</h1>
+                <p class="text-center text-xs mt-[20px]">Please wait while we measure your Blood Pressure</p>
+
+                <div
+                  class="text-center loading loading-spinner loading-lg mt-[20px]" id="page6-loading"
+                ></div>
+
+                <div class="hidden" id="page6-results">
+                    <h1 class="text-center text-[2.5em]">120/80 mmHg</h1>
+     
+                    <button class="btn btn-ghost text-center ml-[30px]" onclick="$('#page7').removeClass('visible'); $('#page8').addClass('visible');">Click here to find out more</button>
+                </div>
+
+              </div>
+
+              <div id="page8" class="page  justify-center items-center flex-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="60" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16" >
+                    <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+                </svg>
+
+                <p class="text-center text-[13px] mt-[20px] px-[5px] ">
+                    Your blood pressure reading of 120/80 mmHg is considered to be within the ideal range for most adults, reflecting optimal blood pressure levels. Here's a brief insight into what these numbers mean:
+                    Systolic Blood Pressure (120 mmHg): This is the first (top) number in the reading. It represents the pressure in your arteries when your heart beats and pumps blood. A systolic pressure of around 120 mmHg is considered normal and indicates that your heart is pumping effectively without excessive force.
+                    Diastolic Blood Pressure (80 mmHg): This is the second (bottom) number in the reading. It represents the pressure in your arteries when your heart is resting between beats. A diastolic pressure of around 80 mmHg is also considered normal, indicating that the resistance to blood flow in your blood vessels is within the desired range.
+                    Overall, a blood pressure reading of 120/80 mmHg suggests good cardiovascular health, especially when combined with a healthy lifestyle, including regular exercise, a balanced diet, and avoiding smoking and excessive alcohol consumption.
+                    
+                    </p>
+
+
+                <button class="btn btn-primary px-10 text-center mt-6 " onclick='mH3()'>Next</button>
+              </div>
+
+              <div id="page9" class="page justify-center items-center flex-col">
+                <H1 class="text-[6em] " style="margin-bottom: 60px;">O<small class="text-4xl">2</small></H1>
+                <h1 class="text-center text-[2.5em] ml-[25px]">Measuring...</h1>
+                <p class="text-center text-xs mt-[20px]">Please wait while we measure your Blood Oxygen</p>
+
+                <div
+                  class="text-center loading loading-spinner loading-lg mt-[20px]" id="page7-loading"
+                ></div>
+
+                <div class="hidden" id="page7-results">
+                    <h1 class="text-center text-[2.5em]">95%</h1>
+     
+                    <button class="btn btn-ghost" onclick="$('#page9').removeClass('visible'); $('#page10').addClass('visible');">Click here to find out more</button>
+                </div>
+
+              </div>
+
+              <div id="page10" class="page justify-center items-center flex-col">
+                <H1 class="text-[6em] " style="margin-bottom: 60px;">O<small class="text-4xl">2</small></H1>
+
+                <p class="text-center text-xs mt-[20px] px-[5px] ">
+                    An SpO2 level, or blood oxygen saturation level, of 95% means that 95% of the hemoglobin in your red blood cells is carrying oxygen. For most healthy individuals, an SpO2 level ranges from 95% to 100%, indicating adequate oxygenation of your body's tissues and organs.
+
+                    At 95%, your oxygen saturation is at the lower end of the normal range. While this is generally considered acceptable, especially if you're at a higher altitude, experiencing a temporary physical condition, or have certain pre-existing health conditions, it's important to monitor any symptoms you might be experiencing. If you're feeling well, without symptoms like shortness of breath, chest pain, or excessive fatigue, this level can be considered normal for you.
+                    
+                    
+                    </p>
+
+
+                <button class="btn btn-primary px-10 text-center mt-6 " onclick='$("#page10").removeClass("visible"); $("#page11").addClass("visible");'>Next</button>
+              </div>
+
+              <div id="page11" class="page   items-center flex-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16" >
+                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                  </svg>
+
+                <h1 class="text-center text-[2.5em] px-6">Measurements <br> Complete!</h1>
+               
+                <div class="form-control">
+                    <label class="label cursor-pointer">
+                      <span class="label-text px-6">Attach Past Week’s health data from AXTRO Fit 3</span> 
+                      <input type="checkbox" checked="checked" class="checkbox mr-2">
+                    </label>
+                  </div>
+
+                <p class="text-center text-xs mt-[20px] px-[5px] ">
+                     Enter existing symptoms (if any) 
+                    </p>
+
+                <textarea class="w-[80%] h-[100px] border-2 border-gray-300 rounded-md p-2" placeholder="Enter symptoms here"></textarea>
+
+                <button class="btn btn-success px-10 text-center mt-[4px]" onclick='mh5()'>Submit</button>
+
+              </div>
+
+              <div id="page12" class="page justify-center items-center flex-col ">
+                    <!--queue number title then the number-and estimated time-->
+                    <h1 class="text-center text-[3.5em]" id="queue">Queue Number: 1234</h1>
+                    <p class="text-center text-3xl">Estimated waiting time: 
+                    </p>
+                    <span class="countdown font-mono text-2xl">
+                        <span id="hour" style="--value:10;"></span>m
+        
+                      </span>
+
+                    <p class="text-center text-xs mt-[20px] px-[5px] ">
+                        The doctor is aware of your symptoms and will be with you shortly. Please wait for your queue number to be called.
+
+                        <br>
+                        <br>
+                        Thank you for your patience.
+                        </p>
+
+
+                    
+                    
+              </div>
+
+         
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".sing-login").click(function () {
+          //go to page 2
+          $("#page1").removeClass("visible");
+          $("#page2").addClass("visible");
+          //every 1 second we make the timer go down, as for now the singpass logic has not been implemented so we have a hard coded 5 seconds
+
+          var timeleft = 5;
+
+          var downloadTimer = setInterval(function () {
+            timeleft--;
+            document.getElementById("timer1").textContent =
+              "Please wait " + timeleft + " seconds...";
+            if (timeleft <= 0) {
+              clearInterval(downloadTimer);
+            }
+          }, 1000);
+
+          setTimeout(function () {
+            //go to page 3
+            $("#page2").removeClass("visible");
+            $("#page3").addClass("visible");
+          }, timeleft * 1000);
+
+
+          
+        });
+
+      });
+      
+      function mH() {
+            $('#page4').removeClass('visible'); $('#page5').addClass('visible');
+
+            //wait from 2 to 10 seconds then unhide page5-results
+            var timeleft = Math.floor(Math.random() * 10) + 2;
+
+            var downloadTimer = setInterval(function () {
+              timeleft--;
+              if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                $('#page5-results').removeClass('hidden');
+                $('#page5-loading').addClass('hidden');
+
+
+
+              }
+            }, 1000);
+
+        }
+        function mH2() {
+            $('#page6').removeClass('visible'); $('#page7').addClass('visible');
+
+            //wait from 2 to 10 seconds then unhide page5-results
+            var timeleft = Math.floor(Math.random() * 10) + 2;
+
+            var downloadTimer = setInterval(function () {
+              timeleft--;
+              if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                $('#page6-results').removeClass('hidden');
+                $('#page6-loading').addClass('hidden');
+
+
+
+              }
+            }, 1000);
+
+        }
+
+        function mH3() {
+            $('#page8').removeClass('visible'); $('#page9').addClass('visible');
+
+            //wait from 2 to 10 seconds then unhide page5-results
+            var timeleft = Math.floor(Math.random() * 10) + 2;
+
+            var downloadTimer = setInterval(function () {
+              timeleft--;
+              if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                $('#page7-results').removeClass('hidden');
+                $('#page7-loading').addClass('hidden');
+              } 
+            }, 1000);
+
+        }
+
+        function mH4() {
+            $('#page9').removeClass('visible'); $('#page10').addClass('visible');
+
+            //wait from 2 to 10 seconds then unhide page5-results
+            var timeleft = Math.floor(Math.random() * 10) + 2;
+
+            var downloadTimer = setInterval(function () {
+              timeleft--;
+              if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                $('#page8-results').removeClass('hidden');
+                $('#page8-loading').addClass('hidden');
+              } 
+            }, 1000);
+
+        }
+
+        function mh5() {
+    $('#page11').removeClass('visible');
+    $('#page12').addClass('visible');
+    var queueNumber = Math.floor(Math.random() * 9000) + 1000 ;
+    // give between 0 to 60 minutes
+    var waitingTime = Math.floor(Math.random() * 60);
+
+
+
+
+
+    // Function to update the countdown timer
+    function updateTimer() {
+        if (waitingTime > 0) {
+            waitingTime--; // Decrement the waiting time
+          
+    
+                     
+            document.querySelector('#hour').style.setProperty('--value', waitingTime);
+           
+            
+            
+            
+        } else {
+            clearInterval(timerInterval); // Stop the timer when time has ended
+            document.querySelector('.countdown').innerHTML = 'Time is up!';
+        }
+    }
+
+    // Initial call to update the timer
+    updateTimer();
+
+    // Set interval to update the timer every second
+    var timerInterval = setInterval(updateTimer, 60000);
+
+    // Display the queue number and estimated waiting time
+    document.querySelector('#queue').innerHTML = 'Queue Number: ' + queueNumber;
+}
+
+
+
+    </script>
+  </body>
+</html>
