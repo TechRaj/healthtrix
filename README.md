@@ -2,11 +2,11 @@
 
 ![Logo](https://raw.githubusercontent.com/babymonie/healthtrix/main/HealthTrixHorizontalLogo.png)
 
-HealthTrix is a revolutionary project aimed at leveraging technology to improve healthcare outcomes and efficiency. Developed by Karthikraj Sivakumar, Adrin Roshan Andrew Manohar, S. Shanthosh, Sanjay Krishna, and Jothillingam Dheeraj, HealthTrix introduces an innovative extension device for the AXTRO Fit 3 Smartwatch, approved by the Health Development Board. By seamlessly integrating with existing smartwatches, HealthTrix enables real-time monitoring of vital health metrics, including Blood Pressure, Blood Oxygen (SpO2), and BMI calculation, thereby empowering users to proactively manage their health.
+HealthTrix is an innovative solution designed to revolutionize the triage process in healthcare settings. By integrating a proprietary accessory with the AXTRO Fit 3 smartwatch, HealthTrix enables patients to autonomously collect vital body metrics, significantly reducing the workload on healthcare professionals and streamlining the vital assessment phase.
 
 ## Introduction
 
-HealthTrix aims to revolutionize the healthcare landscape by providing individuals with convenient access to critical health data, promoting early detection of potential health issues, and facilitating timely intervention when necessary.
+Introducing HealthTrix, a groundbreaking ecosystem tailored to enhance efficiency and sustainability in polyclinics and A&E departments. Our solution addresses the critical challenge of manpower shortages in the healthcare industry by equipping patients with the tools to monitor their vital signs. By leveraging real-time data collection of Blood Pressure, SpO2 levels, Heart Rate, and integrating a BMI calculator and fitness tracker within the HealthTrix app, we empower individuals with medical knowledge and foster proactive health management. Coupled with an advanced medical AI chatbot, HealthTrix educates users on their health metrics, facilitating a more efficient triage process and reducing waiting times significantly.
 
 ## Features
 
@@ -57,5 +57,5 @@ Here are some of the images we have designed for the HealthTrix device:
 ![image 4](https://github.com/babymonie/healthtrix/raw/main/09e5c963-800b-48c8-b389-7048b9159e91.jfif)
 ## Conclusion
 
-HealthTrix represents a significant advancement in healthcare technology, offering individuals unprecedented control over their health monitoring and management. With its user-centric design, robust features, and seamless integration, HealthTrix is poised to revolutionize the way we approach personal health and well-being.
+HealthTrix stands at the forefront of healthcare innovation, offering a symbiotic solution that benefits both patients and medical professionals alike. By minimizing wait times and enabling proactive health monitoring, HealthTrix not only aims to enhance the efficiency of healthcare services but also to empower individuals with knowledge and control over their health. As we seek regulatory approval and aim for integration with HealthHub, our vision is to make HealthTrix an indispensable part of Singapore's healthcare landscape, ultimately leading to a more informed and healthier society.
 
