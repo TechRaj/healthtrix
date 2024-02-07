@@ -375,7 +375,7 @@ resize: none;
     $('#page12').addClass('visible');
     var queueNumber = Math.floor(Math.random() * 9000) + 1000 ;
     // give between 0 to 60 minutes
-    var waitingTime = Math.floor(Math.random() * 60);
+    var waitingTime = Math.floor(Math.random() * 30);
 
 
 
@@ -403,7 +403,7 @@ resize: none;
     updateTimer();
 
     // Set interval to update the timer every second
-    var timerInterval = setInterval(updateTimer, 60000);
+    var timerInterval = setInterval(updateTimer, 30000);
 
     // Display the queue number and estimated waiting time
     document.querySelector('#queue').innerHTML = 'Queue Number: ' + queueNumber;
