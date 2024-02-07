@@ -2,11 +2,9 @@
 
 ![Logo](https://raw.githubusercontent.com/babymonie/healthtrix/main/HealthTrixHorizontalLogo.png)
 
-HealthTrix is an innovative solution designed to revolutionize the triage process in healthcare settings. By integrating a proprietary accessory with the AXTRO Fit 3 smartwatch, HealthTrix enables patients to autonomously collect vital body metrics, significantly reducing the workload on healthcare professionals and streamlining the vital assessment phase.
-
 ## Introduction
 
-Introducing HealthTrix, a groundbreaking ecosystem tailored to enhance efficiency and sustainability in polyclinics and A&E departments. Our solution addresses the critical challenge of manpower shortages in the healthcare industry by equipping patients with the tools to monitor their vital signs. By leveraging real-time data collection of Blood Pressure, SpO2 levels, Heart Rate, and integrating a BMI calculator and fitness tracker within the HealthTrix app, we empower individuals with medical knowledge and foster proactive health management. Coupled with an advanced medical AI chatbot, HealthTrix educates users on their health metrics, facilitating a more efficient triage process and reducing waiting times significantly.
+HealthTrix is an innovative solution designed to revolutionize the triage process in the Polyclinics and Hospitals. HealthTrix transcends healthcare visits by significantly reducing wait times for the General Vital Assessment process in Polyclinics and A&Es. HealthTrix also aims to enhance patient education on body vitals. By integrating a proprietary accessory with the AXTRO Fit 3 smartwatch,we allow the patients to autonomously collect vital body metrics, significantly reducing the workload on healthcare professionals and streamlining the General Vital Assessment process. HealthTrix is integrated with our proprietary VitaLearn (AI powered chatbot) which helps in educating and empowering individuals with medical knowledge about their body vitals and foster proactive health management.
 
 ## Features
 
